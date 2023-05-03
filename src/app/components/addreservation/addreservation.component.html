@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Reservation</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    
+    <!--Main Content-->
+    <div class="my-5">
+      <div class="mx-auto w-25 " style="max-width:100%;">
+        <h2 class="text-center mb-3">Create Reservation</h2>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+        
+  
+          <!--Rfereneve-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="reference" class="form-label">Reference</label>
+              <input id="Reference" type="text" name="reference"  formControlName="reference" class="form-control" placeholder="reference" required>
+            </div>
+          </div>
+         
+     <!--Date Reservation-->
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <label for="dateReservation" class="form-label">Date Reservation</label>
+    <input id="dateReservation" type="date" name="dateReservation" formControlName="dateReservation" class="form-control" required>
+  </div>
+</div>
+
+          <!--Lieu Depart -->
+            <div class="row">
+              <div class="col-md-12 form-group mb-3">
+                <label for="lieuDep" class="form-label">lieuDep</label>
+                <textarea id="lieuDep" type="text" name="lieuDep"  formControlName="lieuDep" class="form-control" placeholder="lieuDep" rows="3" required></textarea>
+              </div>
+            </div>
+              <!--Lieu Arrivee-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="lieuArr" class="form-label">lieuArr</label>
+              <textarea id="lieuArr" type="text" name="lieuArr"  formControlName="lieuArr" class="form-control" placeholder="lieuArr" rows="3" required></textarea>
+            </div>
+          </div>
+         
+
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit">
+            </div>
+          </div>
+
+          <div>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+    <img [src]="imageUrl" alt="Funny monkey " class="my-image">
+  
+</body>
+</html>
