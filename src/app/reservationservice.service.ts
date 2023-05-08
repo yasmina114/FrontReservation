@@ -7,23 +7,24 @@ import { Reservation } from './Reservation';
   providedIn: 'root'
 })
 export class ReservationserviceService {
-  private url ="http://localhost:8081/commands/reservation";
+  private url ="http://localhost:8088/commands/reservation";
 
   constructor(private http :HttpClient) { }
     
   // Add Reservations - Create
-  addreservation(reservation: Reservation){
-    return this.http.post<Reservation>(`${this.url}create`, reservation)
+  addreservation(reservation: Reservation) {
+    return this.http.post<Reservation>(`${this.url}/create`, reservation);
   }
+  
 
   // Get Reservations- Read
-  getReservations(): Observable<any[]>{
-    return this.http.get<any[]>(this.url+'reservations')
+  getReservations(){
+    return this.http.get<Reservation[]>('http://localhost:8088/query/reservations/GetAllReservations')
   }
 
   // Get Reservation by Id - Read
   getReservationById(id: String): Observable<Reservation>{
-    return this.http.get<Reservation>(`${this.url}reservation/${id}`)
+    return this.http.get<Reservation>(`${this.url}/reservation/${id}`)
   }
 
  

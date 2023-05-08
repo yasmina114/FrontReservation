@@ -25,7 +25,7 @@ export class ViewreservationsComponent implements OnInit{
     
       
       showReservations(id: string): void {
-          this.router.navigate(['/eventStore/{reservationId}', id]);
+          this.router.navigate(['reservationId', id]);
         }
         search(): void {
           this.reservationsService.search(this.searchTerm).subscribe((data: Reservation[]) => {
